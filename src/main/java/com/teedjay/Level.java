@@ -38,6 +38,11 @@ public class Level {
     long regularDots = tilemap.chars().filter(i -> i == '.').count();
     long dotsInTotal = superDots + regularDots;
 
+    long ghosts = tilemap.chars().filter(i -> "12345678".indexOf(i) > -1).count();
+    long tunnels = tilemap.chars().filter(i -> "ABCD".indexOf(i) > -1).count();
+    long fruits = tilemap.chars().filter(i -> i == '*').count();
+    long pacmans = tilemap.chars().filter(i -> i == '@').count();
+
     long width = tilemap.lines().findFirst().get().length();
     long height = tilemap.lines().count();
 

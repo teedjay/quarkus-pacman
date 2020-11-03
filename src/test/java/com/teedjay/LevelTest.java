@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LevelTest {
 
     @Test
-    public void verifyTileMapTest() {
+    public void verifyTileMap() {
 
         Level level = new Level();
         
@@ -24,6 +24,14 @@ public class LevelTest {
 
         //System.out.println(sb.toString());
         assertEquals(level.tilemap, sb.toString());
+
+        // verify some map specific details
+        assertEquals(3, level.superDots);
+        assertEquals(388, level.dotsInTotal);
+        assertEquals(4, level.ghosts);
+        assertEquals(4, level.tunnels);
+        assertEquals(1, level.fruits);
+        assertEquals(1, level.pacmans);
 
     }
 
