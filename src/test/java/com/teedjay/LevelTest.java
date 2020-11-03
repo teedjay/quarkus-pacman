@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LevelTest {
 
     @Test
-    public void verifyTimeMap() {
+    public void verifyTileMapTest() {
 
         Level level = new Level();
         
