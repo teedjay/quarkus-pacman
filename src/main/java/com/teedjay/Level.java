@@ -51,4 +51,22 @@ public class Level {
         return tilemap.charAt(index);
     }
 
+    public char calculatedTileAt(int x, int y) {
+        char tile = getTileAt(x, y);
+        if (tile == '+') {
+            boolean wup = false, wright = false, wdown = false, wleft = false;
+            if (x > 0) wleft = ('-' == getTileAt(x - 1, y));
+            if (x < (width - 1)) wright = ('-' == getTileAt(x + 1, y));
+            if (y > 0) wup = ('|' == getTileAt(x, y - 1));
+            if (y < (height - 1)) wdown = ('|' == getTileAt(x, y + 1));
+            var surroundigs = "" + (wup ? "U" : " ") + (wright ? "R" : " ") + (wdown ? "D" : " ") + (wleft ? "L" : " ");
+            //
+            if ("UR  ".equals(surroundigs)) tile = '\\';
+            if ("U  L".equals(surroundigs)) tile = '/';
+            if (" RD ".equals(surroundigs)) tile = '/';
+            if ("  DL".equals(surroundigs)) tile = '\\';
+        }
+        return tile;
+    }
+
 }

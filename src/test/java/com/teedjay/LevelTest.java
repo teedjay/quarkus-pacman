@@ -1,15 +1,16 @@
 package com.teedjay;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LevelTest {
 
     @Test
-    public void verifyTileMap() {
+    void verifyTileMap() {
 
         Level level = new Level();
-        
+
         //System.out.println(level.tilemap);
         assertEquals(32, level.width);
         assertEquals(18, level.height);
@@ -33,6 +34,20 @@ public class LevelTest {
         assertEquals(1, level.fruits);
         assertEquals(1, level.pacmans);
 
+    }
+
+    @Test
+    void printTileMap() {
+        Level level = new Level();
+        StringBuilder sb = new StringBuilder();
+        for (int y = 0; y < level.height; y++) {
+            for (int x = 0; x < level.width; x++) {
+                char tile = level.calculatedTileAt(x, y);
+                sb.append(tile);
+            }
+            sb.append("\n");
+        }
+        System.out.println(sb.toString());
     }
 
 }
