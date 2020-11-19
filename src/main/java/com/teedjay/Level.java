@@ -2,6 +2,9 @@ package com.teedjay;
 
 public class Level {
 
+    // At the core of Pacman is on a Z80 CPU supported by a 224x288 color video with hardware sprites and a 3-voice wavetable sound generator... a pretty nice setup for 1980!
+    // GFX https://www.spriters-resource.com/arcade/pacman/
+
     // + are round edges (calculated on inbound connections)
     // - are horizontal walls
     // | are vertical walls
